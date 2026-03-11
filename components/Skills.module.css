@@ -1,0 +1,116 @@
+.skills {
+    background: var(--bg-primary);
+    position: relative;
+}
+
+.skills::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(59, 130, 246, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 56px;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.header.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Category grid – 2×2 on desktop */
+.categoryGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s;
+}
+
+.categoryGrid.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Individual card */
+.categoryCard {
+    padding: 28px 28px 24px;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.categoryCard:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow);
+}
+
+/* Card header row */
+.catHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.catAccent {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.catIcon {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.catTitle {
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+/* Skill tags row */
+.tagGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skillTag {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    border: 1px solid;
+    font-size: 0.82rem;
+    font-weight: 500;
+    font-family: var(--font-mono);
+    letter-spacing: 0.02em;
+    transition: var(--transition);
+    cursor: default;
+    white-space: nowrap;
+}
+
+.skillTag:hover {
+    filter: brightness(1.15);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .categoryGrid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,129 @@
+.footer {
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-violet), transparent);
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* Brand */
+.brand {}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.logoIcon {
+    width: 30px;
+    height: 30px;
+    border-radius: var(--radius-sm);
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.dot {
+    color: var(--accent-blue);
+}
+
+.tagline {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Nav */
+.links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.link {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.link:hover {
+    color: var(--accent-blue);
+}
+
+/* Right */
+.right {}
+
+.topBtn {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.topBtn:hover {
+    color: var(--accent-blue);
+    border-color: var(--accent-blue);
+    background: rgba(59, 130, 246, 0.1);
+    transform: translateY(-3px);
+}
+
+/* Bottom bar */
+.bottomBar {
+    border-top: 1px solid var(--border-color);
+    padding: 16px 0;
+}
+
+.copy {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.heart {
+    color: #ef4444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .links {
+        justify-content: center;
+    }
+}
