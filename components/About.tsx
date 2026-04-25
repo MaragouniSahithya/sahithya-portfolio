@@ -50,8 +50,13 @@ export default function About() {
                             ))}
                         </div>
 
-                        <a href="/resume.pdf" className={`btn-ghost ${styles.resume}`} download>
-                            <Download size={16} />
+                        <a
+                            href="/sahithya-resume.pdf"
+                            download="Sahithya_Resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`btn-ghost ${styles.resume}`}
+                        >
                             Download Resume
                         </a>
                     </div>

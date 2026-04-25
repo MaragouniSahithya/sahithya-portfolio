@@ -6,6 +6,15 @@ import styles from "./Projects.module.css";
 
 const PROJECTS = [
     {
+        title: "SplitEase",
+        description:
+            "A full-stack bill-splitting web application built with React.js and Node.js/Express, enabling users to split expenses among groups with real-time calculations and a clean responsive UI.",
+        tags: ["React.js", "Node.js", "Express.js", "JavaScript"],
+        gradient: "linear-gradient(135deg, #22c55e, #06b6d4)",
+        github: "https://github.com/MaragouniSahithya/SplitEase",
+        demo: "https://split-ease-rust.vercel.app",
+    },
+    {
         title: "Xtream Fitness Gym",
         description:
             "A responsive fitness website built using React that showcases gym services, workout sections, and membership information with a modern UI.",
@@ -22,15 +31,6 @@ const PROJECTS = [
         gradient: "linear-gradient(135deg, #8b5cf6, #ec4899)",
         github: "https://github.com/MaragouniSahithya/my-book-list",
         demo: "https://github.com/MaragouniSahithya/my-book-list",
-    },
-    {
-        title: "Simon Game",
-        description:
-            "An interactive memory game where users repeat an increasingly complex pattern of colors and sounds.",
-        tags: ["HTML", "CSS", "JavaScript", "jQuery"],
-        gradient: "linear-gradient(135deg, #3b82f6, #06b6d4)",
-        github: "https://github.com/MaragouniSahithya/SimonGame",
-        demo: "https://github.com/MaragouniSahithya/SimonGame",
     },
 ];
 
