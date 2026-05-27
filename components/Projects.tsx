@@ -1,36 +1,39 @@
 "use client";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Dumbbell, Wallet, Activity } from "lucide-react";
 import styles from "./Projects.module.css";
 
 const PROJECTS = [
     {
+        title: "FitForge",
+        description:
+            "An AI-powered personalized diet and fitness planning platform that creates customized 7-day workout and nutrition plans based on individual health data and fitness goals. The application uses Google Gemini AI to generate smart recommendations, supports secure user authentication, tracks daily progress, and provides AI-generated motivational check-ins for a personalized fitness journey.",
+        tags: ["Node.js", "Express.js", "MongoDB", "Google Gemini AI", "JWT", "JavaScript"],
+        gradient: "linear-gradient(135deg, #6366f1, #a855f7)",
+        github: "https://github.com/MaragouniSahithya/FitForge",
+        demo: "https://fit-forge-roan.vercel.app",
+        icon: Dumbbell,
+    },
+    {
         title: "SplitEase",
         description:
-            "A full-stack bill-splitting web application built with React.js and Node.js/Express, enabling users to split expenses among groups with real-time calculations and a clean responsive UI.",
+            "A full-stack expense-sharing web application designed to simplify group expense management. Users can create groups, split bills among members, calculate balances in real time, and track payments through a clean and responsive interface. The system provides an efficient way to manage shared expenses for friends, roommates, and teams.",
         tags: ["React.js", "Node.js", "Express.js", "JavaScript"],
         gradient: "linear-gradient(135deg, #22c55e, #06b6d4)",
         github: "https://github.com/MaragouniSahithya/SplitEase",
         demo: "https://split-ease-rust.vercel.app",
+        icon: Wallet,
     },
     {
         title: "Xtream Fitness Gym",
         description:
-            "A responsive fitness website built using React that showcases gym services, workout sections, and membership information with a modern UI.",
+            "A modern and responsive fitness website developed using React that showcases gym services, workout programs, membership plans, and trainer information. The platform provides users with an engaging experience to explore fitness programs, learn about the gym, and take action through a clean UI.",
         tags: ["React.js", "JavaScript", "CSS"],
         gradient: "linear-gradient(135deg, #f59e0b, #ef4444)",
         github: "https://github.com/MaragouniSahithya/xtreme-fitness-gym",
         demo: "https://xtremefitnessclub.vercel.app",
-    },
-    {
-        title: "My Book List",
-        description:
-            "A full-stack web application that allows users to add, manage, and remove books from a personal collection with persistent data storage.",
-        tags: ["Node.js", "Express.js", "JavaScript", "Database"],
-        gradient: "linear-gradient(135deg, #8b5cf6, #ec4899)",
-        github: "https://github.com/MaragouniSahithya/my-book-list",
-        demo: "https://github.com/MaragouniSahithya/my-book-list",
+        icon: Activity,
     },
 ];
 
@@ -58,49 +61,52 @@ export default function Projects() {
 
                 {/* Grid */}
                 <div className={styles.grid}>
-                    {PROJECTS.map((p, i) => (
-                        <article
-                            key={p.title}
-                            className={`glass-card ${styles.card} ${inView ? styles.cardVisible : ""}`}
-                            style={{ transitionDelay: `${0.1 + i * 0.08}s` }}
-                        >
-                            {/* Gradient top bar */}
-                            <div className={styles.cardBar} style={{ background: p.gradient }} />
+                    {PROJECTS.map((p, i) => {
+                        const Icon = p.icon;
+                        return (
+                            <article
+                                key={p.title}
+                                className={`glass-card ${styles.card} ${inView ? styles.cardVisible : ""}`}
+                                style={{ transitionDelay: `${0.1 + i * 0.08}s` }}
+                            >
+                                {/* Gradient top bar */}
+                                <div className={styles.cardBar} style={{ background: p.gradient }} />
 
-                            {/* Card header */}
-                            <div className={styles.cardTop}>
-                                <div className={styles.cardIcon} style={{ background: p.gradient }}>
-                                    {p.title[0]}
+                                {/* Card header */}
+                                <div className={styles.cardTop}>
+                                    <div className={styles.cardIcon} style={{ background: p.gradient }}>
+                                        <Icon size={20} />
+                                    </div>
                                 </div>
-                            </div>
 
-                            {/* Content */}
-                            <h3 className={styles.cardTitle}>{p.title}</h3>
-                            <p className={styles.cardDesc}>{p.description}</p>
+                                {/* Content */}
+                                <h3 className={styles.cardTitle}>{p.title}</h3>
+                                <p className={styles.cardDesc}>{p.description}</p>
 
-                            {/* Tags */}
-                            <div className={styles.tags}>
-                                {p.tags.map((tag) => (
-                                    <span key={tag} className="tag">{tag}</span>
-                                ))}
-                            </div>
+                                {/* Tags */}
+                                <div className={styles.tags}>
+                                    {p.tags.map((tag) => (
+                                        <span key={tag} className="tag">{tag}</span>
+                                    ))}
+                                </div>
 
-                            {/* Footer */}
-                            <div className={styles.cardFooter}>
-                                <a href={p.github} target="_blank" rel="noreferrer" className={styles.githubBtn}>
-                                    <Github size={14} />
-                                    GitHub Repository
-                                </a>
-                                <a href={p.demo} target="_blank" rel="noreferrer" className={styles.demoBtn}>
-                                    <ExternalLink size={14} />
-                                    Live Demo
-                                </a>
-                            </div>
+                                {/* Footer */}
+                                <div className={styles.cardFooter}>
+                                    <a href={p.github} target="_blank" rel="noreferrer" className={styles.githubBtn}>
+                                        <Github size={14} />
+                                        GitHub Repository
+                                    </a>
+                                    <a href={p.demo} target="_blank" rel="noreferrer" className={styles.demoBtn}>
+                                        <ExternalLink size={14} />
+                                        Live Demo
+                                    </a>
+                                </div>
 
-                            {/* Hover glow */}
-                            <div className={styles.cardGlow} style={{ background: p.gradient }} />
-                        </article>
-                    ))}
+                                {/* Hover glow */}
+                                <div className={styles.cardGlow} style={{ background: p.gradient }} />
+                            </article>
+                        );
+                    })}
                 </div>
 
                 {/* View all link */}
@@ -114,3 +120,4 @@ export default function Projects() {
         </section>
     );
 }
+
